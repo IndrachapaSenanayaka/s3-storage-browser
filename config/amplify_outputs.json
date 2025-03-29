@@ -1,0 +1,187 @@
+{
+  "auth": {
+    "user_pool_id": "ap-southeast-1_DBTYFRvwy",
+    "aws_region": "ap-southeast-1",
+    "user_pool_client_id": "7d7pue6pvr6se3qcb5aneocvur",
+    "identity_pool_id": "ap-southeast-1:cc96cbaa-0b70-4255-b157-21940db29cc9",
+    "mfa_methods": [],
+    "standard_required_attributes": [
+      "email"
+    ],
+    "username_attributes": [
+      "email"
+    ],
+    "user_verification_types": [
+      "email"
+    ],
+    "groups": [],
+    "mfa_configuration": "NONE",
+    "password_policy": {
+      "min_length": 8,
+      "require_lowercase": true,
+      "require_numbers": true,
+      "require_symbols": true,
+      "require_uppercase": true
+    },
+    "unauthenticated_identities_enabled": true
+  },
+  "data": {
+    "url": "https://2ltjcfzoi5hirn4hrrmwanny24.appsync-api.ap-southeast-1.amazonaws.com/graphql",
+    "aws_region": "ap-southeast-1",
+    "api_key": "da2-2hl63dhjpbh2lgyaxicukcrrxa",
+    "default_authorization_type": "API_KEY",
+    "authorization_types": [
+      "AMAZON_COGNITO_USER_POOLS",
+      "AWS_IAM"
+    ],
+    "model_introspection": {
+      "version": 1,
+      "models": {
+        "Todo": {
+          "name": "Todo",
+          "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "content": {
+              "name": "content",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "createdAt": {
+              "name": "createdAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            },
+            "updatedAt": {
+              "name": "updatedAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            }
+          },
+          "syncable": true,
+          "pluralName": "Todos",
+          "attributes": [
+            {
+              "type": "model",
+              "properties": {}
+            },
+            {
+              "type": "auth",
+              "properties": {
+                "rules": [
+                  {
+                    "allow": "public",
+                    "provider": "apiKey",
+                    "operations": [
+                      "create",
+                      "update",
+                      "delete",
+                      "read"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "primaryKeyInfo": {
+            "isCustomPrimaryKey": false,
+            "primaryKeyFieldName": "id",
+            "sortKeyFieldNames": []
+          }
+        }
+      },
+      "enums": {},
+      "nonModels": {}
+    }
+  },
+  "storage": {
+    "aws_region": "ap-southeast-1",
+    "bucket_name": "amplify-dk5xyu3b46ytw-mai-lasttests3bucket4f459782-xzrm1rxfd4ar",
+    "buckets": [
+      {
+        "name": "lastTestS3Bucket",
+        "bucket_name": "amplify-dk5xyu3b46ytw-mai-lasttests3bucket4f459782-xzrm1rxfd4ar",
+        "aws_region": "ap-southeast-1",
+        "paths": {
+          "public/*": {
+            "guest": [
+              "get",
+              "list"
+            ],
+            "authenticated": [
+              "get",
+              "list",
+              "write",
+              "delete"
+            ]
+          },
+          "protected/*": {
+            "authenticated": [
+              "get",
+              "list"
+            ]
+          },
+          "protected/${cognito-identity.amazonaws.com:sub}/*": {
+            "entityidentity": [
+              "get",
+              "list",
+              "write",
+              "delete"
+            ]
+          },
+          "private/${cognito-identity.amazonaws.com:sub}/*": {
+            "entityidentity": [
+              "get",
+              "list",
+              "write",
+              "delete"
+            ]
+          }
+        }
+      },
+      {
+        "name": "amplify-test-my",
+        "bucket_name": "amplify-test-my",
+        "aws_region": "ap-southeast-1",
+        "paths": {
+          "public/*": {
+            "authenticated": [
+              "get",
+              "list",
+              "write",
+              "delete"
+            ]
+          },
+          "protected/*": {
+            "authenticated": [
+              "get",
+              "list"
+            ]
+          },
+          "protected/${cognito-identity.amazonaws.com:sub}/*": {
+            "entityidentity": [
+              "get",
+              "list",
+              "write",
+              "delete"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "version": "1.3"
+}
