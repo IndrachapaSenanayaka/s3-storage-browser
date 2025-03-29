@@ -3,9 +3,23 @@ import { auth } from './auth/resource.js';
 import { data } from './data/resource.js';
 import { storage, secondaryStorage } from './storage/resource';
 
-defineBackend({
+// defineBackend({
+//   auth,
+//   data,
+//   storage,
+//   secondaryStorage
+// });
+
+
+const backend = defineBackend({
   auth,
   data,
-  storage,
-  secondaryStorage
+});
+
+
+backend.addOutput({
+  storage: {
+    aws_region: "ap-southeast-1",
+    bucket_name: "amplify-test-my"
+  },
 });
