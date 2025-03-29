@@ -11,16 +11,20 @@ import { storage, secondaryStorage } from './storage/resource';
 //   secondaryStorage
 // });
 
-
 const backend = defineBackend({
-  auth,
-  data,
+  storage,
+  secondaryStorage
 });
 
 
-backend.addOutput({
-  storage: {
-    aws_region: "ap-southeast-1",
-    bucket_name: "amplify-test-my"
-  },
-});
+const s3Bucket = backend.storage.resources.bucket;
+
+
+const cfnBucket = s3Bucket.node.defaultChild as s3.CfnBucket;
+
+
+cfnBucket.accelerateConfiguration = {
+  accelerationStatus: "Enabled" // 'Suspended' if you want to disable transfer acceleration
+}
+
+

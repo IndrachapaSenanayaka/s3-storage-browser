@@ -18,25 +18,28 @@ const client = generateClient<Schema>();
 
 
 
-Amplify.configure({
-  Storage: {
-    S3: {
-      bucket: 'amplify-dk5xyu3b46ytw-mai-amplifydataamplifycodege-gkrtof8fomyc',
-      region: 'ap-southeast-1',
-      // default bucket metadata should be duplicated below with any additional buckets
-      buckets: {
-        'amplify-dk5xyu3b46ytw-mai-amplifydataamplifycodege-gkrtof8fomyc': {
-          bucketName: 'amplify-dk5xyu3b46ytw-mai-amplifydataamplifycodege-gkrtof8fomyc',
-          region: 'ap-southeast-1'
-        },
-        'amplify-test-my': {
-          bucketName: 'amplify-test-my',
-          region: 'ap-southeast-1'
-        }
-      }
-    }
-  }
-});
+// Amplify.configure({
+//   Auth: {
+//    
+//   },
+//   Storage: {
+//     S3: {
+//       bucket: 'amplify-dk5xyu3b46ytw-mai-amplifydataamplifycodege-gkrtof8fomyc',
+//       region: 'ap-southeast-1',
+//       // default bucket metadata should be duplicated below with any additional buckets
+//       buckets: {
+//         'amplify-dk5xyu3b46ytw-mai-amplifydataamplifycodege-gkrtof8fomyc': {
+//           bucketName: 'amplify-dk5xyu3b46ytw-mai-amplifydataamplifycodege-gkrtof8fomyc',
+//           region: 'ap-southeast-1'
+//         },
+//         'amplify-test-my': {
+//           bucketName: 'amplify-test-my',
+//           region: 'ap-southeast-1'
+//         }
+//       }
+//     }
+//   }
+// });
 
 
 
